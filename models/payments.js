@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Payments.init({
-    id: DataTypes.INTEGER,
     fees: DataTypes.INTEGER
   }, {
     sequelize,

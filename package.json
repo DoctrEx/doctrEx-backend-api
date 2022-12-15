@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/DoctrEx/doctrEx-backend-api/issues"
   },
+  
   "homepage": "https://github.com/DoctrEx/doctrEx-backend-api#readme",
   "description": "",
   "dependencies": {
@@ -29,4 +30,5 @@
   "devDependencies": {
     "sequelize-cli": "^6.5.2"
   }
+
 }

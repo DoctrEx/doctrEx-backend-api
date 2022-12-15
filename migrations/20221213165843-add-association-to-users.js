@@ -29,6 +29,7 @@ module.exports = {
               model: 'Users', // name of Source model
               key: 'id',
             },
+            as: "patientAppointment",
             allowNull:false,
           }
         );
@@ -43,6 +44,7 @@ module.exports = {
               model: 'Users', // name of Source model
               key: 'id',
             },
+            as: "doctorAppointment",
             allowNull:false,
           }
         );

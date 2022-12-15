@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-import { RoleModel } from '.';
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -16,10 +15,12 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: 'roleId',
             })
             Users.hasMany(models.Appointments, {
-                foreignKey: 'patientId',
+              foreignKey: 'patientId',
+              as: 'patientAppointment'
             })
             Users.hasMany(models.Appointments, {
-                foreignKey: 'doctorId',
+              foreignKey: 'doctorId',
+              as: 'doctorAppointment'
             })
             Users.hasMany(models.Payments, {
                 foreignKey: 'patientId',
@@ -36,7 +37,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    id: DataTypes.INTEGER,
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
