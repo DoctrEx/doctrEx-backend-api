@@ -9,7 +9,7 @@ module.exports.getOne = async (request, response) => {
     const { params: { slug } } = request
     const alias = slug == 'doctor' ? 'doctorAppointment' : 'patientAppointment' 
     
-    const data = await UserModel.findOne({
+    const data = await UserModel.findAll({
         where: { id },
         include: [
             {
