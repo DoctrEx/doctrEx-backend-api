@@ -1,20 +1,15 @@
-const { create, getOne, getAll } = require('./users.action');
+const { update } = require('./users.action');
+
 
 module.exports = {
-    '/': {
-        post: {
-            action: create,
-            level: 'public'
-        },
-        get: {
-            action: getAll,
-            level: 'public'
-        }
-    },
     '/:id': {
-        get: {
+        get:{
             action: getOne,
             level: 'public'
-        }
+        },
+        put: {
+            action: update,
+            level: 'public'
+        },
     }
 };
