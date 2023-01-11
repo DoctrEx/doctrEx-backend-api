@@ -1,12 +1,14 @@
-const { getOne } = require("./get-appointments.action");
-const { postOne } = require("./post-appointments.action");
+const { getAll } = require("./get-payments.action");
+const { postOne } = require("./post-payments.action");
 
 module.exports = {
   "/:slug": {
     get: {
-      action: getOne,
+      action: getAll,
       level: "public",
     },
+  },
+  "/": {
     post: {
       action: postOne,
       level: "public",
