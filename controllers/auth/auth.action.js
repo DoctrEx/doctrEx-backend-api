@@ -50,8 +50,7 @@ module.exports.signin = async (req, res) => {
   console.log("body", req.body);
   UserModel.findOne({
     where: {
-      // email: req.body.email,
-      id: 3,
+      email: req.body.email,
     },
   })
     .then((user) => {
