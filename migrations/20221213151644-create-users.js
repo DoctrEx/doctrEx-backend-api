@@ -27,6 +27,9 @@ module.exports = {
       dateOfBirth: {
         type: Sequelize.STRING,
       },
+      fees: {
+        type: Sequelize.STRING,
+      },
       speciality: {
         type: Sequelize.JSON,
       },

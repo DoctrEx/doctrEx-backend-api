@@ -14,4 +14,10 @@ module.exports = {
       level: "public",
     },
   },
+  // "/mail": {
+  //   post: {
+  //     // action: sendMail,
+  //     level: "public",
+  //   },
+  // },
 };

@@ -79,6 +79,7 @@ module.exports.signin = async (req, res) => {
         name: user.name,
         email: user.email,
         accessToken: token,
+        profilePicture: user.profilePicture,
       };
       res.status(200).send(
         user.roleId == 1

@@ -18,6 +18,12 @@ module.exports = {
       patientName: {
         type: Sequelize.STRING,
       },
+      option: {
+        type: Sequelize.STRING,
+      },
+      profilePicture: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

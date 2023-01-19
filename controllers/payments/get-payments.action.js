@@ -10,22 +10,28 @@ module.exports.getAll = async (request, response) => {
       query: { id },
     } = request;
 
-    console.log(slug, id);
+    // console.log(slug, id);
     const alias = slug == "doctor" ? "doctorPayment" : "patientPayment";
 
     console.log(alias);
-    const data = await UserModel.findOne({
+    const data = await UserModel.findAll({
       where: { id },
       include: [
         {
           model: PaymentModel,
-          //   attributes: ["dateTime"],
+          attributes: [
+            "fees",
+            "doctorName",
+            "patientName",
+            "profilePicture",
+            "option",
+          ],
           as: alias,
         },
       ],
     });
-
-    const res = slug == "doctor" ? data.doctorPayment : data.patientPayment;
+    console.table(data);
+    let res = slug == "doctor" ? data[0].doctorPayment : data[0].patientPayment;
     response.status(200).json(res);
   } catch (err) {
     console.log(err);
